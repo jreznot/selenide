@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriver.TargetLocator;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 
 import java.time.Duration;
@@ -232,6 +233,11 @@ public class SelenideTargetLocator implements TargetLocator {
     } catch (TimeoutException e) {
       throw new NoSuchWindowException("No window found with name or handle or title: " + nameOrHandleOrTitle, e);
     }
+  }
+
+  @Override
+  public WebDriver newWindow(WindowType typeHint) {
+    return webDriver.switchTo().newWindow(typeHint);
   }
 
   /**

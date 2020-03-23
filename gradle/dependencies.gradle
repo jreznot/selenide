@@ -4,7 +4,7 @@ repositories {
 
 ext {
   testngVersion = '7.1.0'
-  seleniumVersion = '3.141.59'
+  seleniumVersion = '4.0.0-alpha-5'
   junitVersion = '5.6.0'
   jettyVersion = '9.4.26.v20200117'
 }
@@ -26,7 +26,7 @@ dependencies {
   compileOnly("org.junit.jupiter:junit-jupiter-migrationsupport:$junitVersion")
   compileOnly("org.testng:testng:$testngVersion") { transitive = false }
 
-  testImplementation("org.seleniumhq.selenium:selenium-server:$seleniumVersion") {
+  testImplementation("org.seleniumhq.selenium:selenium-grid:$seleniumVersion") {
     exclude group: 'net.bytebuddy', module: 'byte-buddy'
   }
   testImplementation("org.eclipse.jetty:jetty-servlet:${jettyVersion}")

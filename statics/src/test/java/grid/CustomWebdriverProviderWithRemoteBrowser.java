@@ -42,7 +42,7 @@ public class CustomWebdriverProviderWithRemoteBrowser extends AbstractGridTest {
       options.setHeadless(true);
       addSslErrorIgnoreCapabilities(options);
 
-      RemoteWebDriver webDriver = new RemoteWebDriver(toURL("http://localhost:" + port + "/wd/hub"), options);
+      RemoteWebDriver webDriver = new RemoteWebDriver(toURL("http://localhost:" + port), options);
       webDriver.setFileDetector(new LocalFileDetector());
       return webDriver;
     }
