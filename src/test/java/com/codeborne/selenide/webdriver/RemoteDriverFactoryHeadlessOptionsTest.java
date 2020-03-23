@@ -28,7 +28,6 @@ class RemoteDriverFactoryHeadlessOptionsTest implements WithAssertions {
     List<String> launchArguments = getBrowserLaunchArgs(ChromeOptions.CAPABILITY, headlessCapabilities);
 
     assertThat(launchArguments).contains("--headless");
-    assertThat(launchArguments).contains("--disable-gpu");
   }
 
   @Test
